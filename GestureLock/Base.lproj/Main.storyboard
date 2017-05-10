@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home_bg" translatesAutoresizingMaskIntoConstraints="NO" id="wZ2-Ds-wcX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bpb-pB-Scl" customClass="XWZGestureLock">
+                                <rect key="frame" x="0.0" y="154.5" width="375" height="358"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bpb-pB-Scl" secondAttribute="height" multiplier="375:358" id="f5H-Fa-ihP"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MB0-wW-hzO">
+                                <rect key="frame" x="289" y="20" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="chessView"/>
+                                <connections>
+                                    <action selector="chessViewBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wKB-1y-4Jk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIe-mS-XTh">
+                                <rect key="frame" x="22" y="20" width="34" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="clear"/>
+                                <connections>
+                                    <action selector="clearBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eYh-Nm-hDo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wZ2-Ds-wcX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="1Je-TU-fIU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wZ2-Ds-wcX" secondAttribute="bottom" id="2H0-WF-1wX"/>
+                            <constraint firstItem="wZ2-Ds-wcX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="A4K-Kq-gaz"/>
+                            <constraint firstAttribute="trailing" secondItem="bpb-pB-Scl" secondAttribute="trailing" id="B2V-L2-9E1"/>
+                            <constraint firstItem="bpb-pB-Scl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DNb-Mj-HWf"/>
+                            <constraint firstItem="bpb-pB-Scl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bTo-OD-bSV"/>
+                            <constraint firstAttribute="trailing" secondItem="wZ2-Ds-wcX" secondAttribute="trailing" id="w88-AG-CaV"/>
+                            <constraint firstItem="bpb-pB-Scl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zs0-yJ-l4K"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gestureLockView" destination="bpb-pB-Scl" id="tmB-Fw-aaC"/>
+                        <segue destination="3V3-uj-kJf" kind="custom" identifier="chessSegue" customClass="XWZCustomSegue" id="eOb-wN-hvp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="137.18140929535232"/>
+        </scene>
+        <!--Chess View Controller-->
+        <scene sceneID="PWV-eA-yJe">
+            <objects>
+                <viewController storyboardIdentifier="chessVC" id="3V3-uj-kJf" customClass="ChessViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gZF-hM-34u"/>
+                        <viewControllerLayoutGuide type="bottom" id="NLI-mt-qe0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2yM-Yh-fjc" customClass="ChessView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bpm-SU-kI6">
+                                <rect key="frame" x="19" y="28" width="52" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="dismiss"/>
+                                <connections>
+                                    <action selector="dismissAction:" destination="3V3-uj-kJf" eventType="touchUpInside" id="pSS-H0-CH5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f57-Of-dak" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="876" y="136"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Home_bg" width="640" height="1008"/>
+    </resources>
+</document>
