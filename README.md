@@ -309,7 +309,7 @@
 2. 文字NSSting相关
 
  ```
-NSString *str = @"小码哥小码哥小码哥小码哥";
+NSString *str = @"辛为舟帅气侧漏";
     
     //AtPoint:文字所画的位置
     //withAttributes:描述文字的属性.
